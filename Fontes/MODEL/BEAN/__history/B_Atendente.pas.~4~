@@ -1,0 +1,18 @@
+unit B_Atendente;
+
+interface
+
+type
+  BAtendente = class
+    private
+    public
+      property login : string;
+      property valorTroco : Currency;
+      property valorPagamenteo : Currency;
+      property pin : Integer;
+      Constructor Create();
+  end;
+
+implementation
+
+end.

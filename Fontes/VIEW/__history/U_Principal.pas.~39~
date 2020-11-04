@@ -1,0 +1,153 @@
+unit U_Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TFrmPrincipal = class(TForm)
+    mmo: TMemo;
+    lbl: TLabel;
+    edtCNPJ: TEdit;
+    lbl1: TLabel;
+    edtToken: TEdit;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    edtNome: TEdit;
+    edtCpf: TEdit;
+    lbl4: TLabel;
+    edtEmail: TEdit;
+    lbl5: TLabel;
+    edtTelefone: TEdit;
+    lbl6: TLabel;
+    lbl7: TLabel;
+    edtDT_CpfCliente: TEdit;
+    lbl8: TLabel;
+    lbl9: TLabel;
+    edtDT_LoginAtendente: TEdit;
+    edtDT_ValorTroco: TEdit;
+    lbl10: TLabel;
+    lbl11: TLabel;
+    edtRP_CpfCliente: TEdit;
+    lbl12: TLabel;
+    lbl13: TLabel;
+    edtRP_LoginAtendente: TEdit;
+    edtRP_ValorPagamento: TEdit;
+    lbl14: TLabel;
+    lbl15: TLabel;
+    edtRP_pin: TEdit;
+    lbl16: TLabel;
+    btnCadastrar: TButton;
+    btnDevolver: TButton;
+    btnReceber: TButton;
+    procedure FormShow(Sender: TObject);
+    procedure btnCadastrarClick(Sender: TObject);
+    procedure btnDevolverClick(Sender: TObject);
+    procedure btnReceberClick(Sender: TObject);
+  private
+    { Private declarations }
+    CCliente : TCCliente;
+    CAtendente : TCAtentende;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+uses
+  C_CLiente,C_Atendente;
+
+{$R *.dfm}
+
+procedure TFrmPrincipal.btnCadastrarClick(Sender: TObject);
+var
+  cnpj, token:string;
+  nome,email,telefone: string;
+  cpf:integer;
+  resposta: string;
+begin
+  cnpj:= edtCNPJ.Text;
+  token:= edtToken.Text;
+
+  resposta := CCliente.Autorizacao(cnpj,token);
+  if resposta = 'AUTORIZADO' then
+  begin
+    mmo.Lines.Add(resposta);
+
+    cpf := StrToInt(edtCpf.Text);
+    nome := edtNome.Text;
+    email := edtEmail.Text;
+    telefone := edtTelefone.Text;
+
+    resposta := CCliente.Cadastrar(nome,email,telefone,cpf);
+    mmo.Lines.Add(resposta);
+  end
+  else
+    mmo.Lines.Add(resposta);
+
+end;
+
+procedure TFrmPrincipal.btnDevolverClick(Sender: TObject);
+var
+  cnpj, token   :string;
+  cpfCliente    :integer;
+  loginAtendente: string;
+  valorTroco    :Currency;
+  resposta      :string;
+begin
+  cnpj      := edtCNPJ.Text;
+  token     := edtToken.Text;
+  resposta  := CAtendente.Autorizacao(cnpj,token);
+  if resposta = 'AUTORIZADO' then
+  begin
+    mmo.Lines.Add(resposta);
+    cpfCliente     := strtoint(edtDT_CpfCliente.Text);
+    loginAtendente := edtDT_LoginAtendente.Text;
+    valorTroco     := strtocurr(edtDT_ValorTroco.Text);
+
+    resposta       := CAtendente.DevolverTroco(cpfCliente,loginAtendente,valorTroco);
+    mmo.Lines.Add(resposta);
+  end
+  else
+    mmo.Lines.Add(resposta);
+
+end;
+
+procedure TFrmPrincipal.btnReceberClick(Sender: TObject);
+  var
+  cnpj, token   :string;
+  cpfCliente,pin:integer;
+  loginAtendente: string;
+  valorPagamento:Currency;
+  resposta      :string;
+begin
+  cnpj      := edtCNPJ.Text;
+  token     := edtToken.Text;
+  resposta  := CAtendente.Autorizacao(cnpj,token);
+  if resposta = 'AUTORIZADO' then
+  begin
+    mmo.Lines.Add(resposta);
+    cpfCliente     := strtoint(edtRP_CpfCliente.Text);
+    loginAtendente := edtRP_LoginAtendente.Text;
+    valorPagamento := strtocurr(edtRP_ValorPagamento.Text);
+    pin            := strtoint(edtRP_pin.Text);
+
+    resposta       := CAtendente.ReceberPagamento(cpfCliente,pin,loginAtendente,valorPagamento);
+    mmo.Lines.Add(resposta);
+  end
+  else
+    mmo.Lines.Add(resposta);
+end;
+
+procedure TFrmPrincipal.FormShow(Sender: TObject);
+begin
+  CCliente := TCCliente.Create;
+  CAtendente := TCAtentende.Create;
+end;
+
+end.

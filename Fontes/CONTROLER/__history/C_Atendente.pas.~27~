@@ -1,0 +1,62 @@
+unit C_Atendente;
+
+interface
+uses
+  B_Cliente,B_Atendente,B_Empresa;
+type
+  TCAtentende = class
+    private
+    public
+      function Autorizacao(cnpj, token:string) : string;
+      function DevolverTroco(cpfCliente:Integer; loginAtendente:string; valorTroco:Currency): string;
+      function ReceberPagamento(cpfCLiente,pin:Integer;loginAtendente:string; valorPagamento: Currency):string;
+      function ValidarValor(): string;
+      constructor Create();
+      destructor Destroy();
+  end;
+  var
+    CAtendente : TCAtentende;
+
+implementation
+
+{ TCAtentende }
+
+function TCAtentende.Autorizacao(cnpj, token: string): string;
+begin
+  BEmpresa.cnpf := cnpj;
+  BEmpresa.token := token;
+  Result:='AUTORIZADO'
+end;
+
+constructor TCAtentende.Create;
+begin
+  BCliente := TBCliente.Create;
+  BEmpresa := TBEmpresa.Create;
+  BAtendente:= TBAtendente.Create;
+end;
+
+destructor TCAtentende.Destroy;
+begin
+  BCliente.Free;
+  BEmpresa.Free;
+  BAtendente.Free;
+end;
+
+function TCAtentende.DevolverTroco(cpfCliente: Integer; loginAtendente: string;valorTroco: Currency): string;
+begin
+  BAtendente.cpfCliente := cpfCliente;
+  BAtendente.login := loginAtendente;
+  BAtendente.valorTroco:= valorTroco;
+  Result  := 'DEVOLVIDO';
+end;
+
+function TCAtentende.ReceberPagamento(cpfCLiente, pin: Integer;loginAtendente: string; valorPagamento: Currency): string;
+begin
+  BAtendente.cpfCliente := cpfCliente;
+  BAtendente.login := loginAtendente;
+  BAtendente.valorPagamenteo := valorPagamento;
+  BAtendente.pin  := pin;
+  Result  := 'RECEBIDO';
+end;
+
+end.

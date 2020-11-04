@@ -1,0 +1,12 @@
+unit C_CadastrarCliente;
+
+interface
+
+type
+  TCCadastrarCliente = class
+
+  end;
+
+implementation
+
+end.

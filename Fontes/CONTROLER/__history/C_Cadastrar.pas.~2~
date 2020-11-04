@@ -1,0 +1,10 @@
+unit C_Cadastrar;
+
+interface
+
+type
+  TCCadastrarCliente
+
+implementation
+
+end.

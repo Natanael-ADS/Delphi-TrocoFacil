@@ -1,0 +1,17 @@
+unit B_Empresa;
+
+interface
+
+type
+  BCliente = class
+    private
+    public
+      property cnpf : string;
+      property token : string;
+      Constructor Create();
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,39 @@
+unit B_Empresa;
+
+interface
+
+type
+  TBEmpresa = class
+    private
+      Fcnpf: integer;
+      Ftoken: string;
+      procedure Setcnpf(const Value: integer);
+      procedure Settoken(const Value: string);
+    public
+      property cnpf : integer read Fcnpf write Setcnpf;
+      property token : string read Ftoken write Settoken;
+      Constructor Create();
+  end;
+  var
+    BEmpresa : TBEmpresa;
+
+implementation
+
+{ TBEmpresa }
+
+constructor TBEmpresa.Create;
+begin
+
+end;
+
+procedure TBEmpresa.Setcnpf(const Value: integer);
+begin
+  Fcnpf := Value;
+end;
+
+procedure TBEmpresa.Settoken(const Value: string);
+begin
+  Ftoken := Value;
+end;
+
+end.

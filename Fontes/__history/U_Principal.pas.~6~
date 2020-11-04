@@ -1,0 +1,55 @@
+unit U_Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm5 = class(TForm)
+    mmo: TMemo;
+    lbl: TLabel;
+    edtCNPJ: TEdit;
+    lbl1: TLabel;
+    edtToken: TEdit;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    edtNome: TEdit;
+    edtCpf: TEdit;
+    lbl4: TLabel;
+    edtEmail: TEdit;
+    lbl5: TLabel;
+    edtTelefone: TEdit;
+    lbl6: TLabel;
+    lbl7: TLabel;
+    edtDT_CpfCliente: TEdit;
+    lbl8: TLabel;
+    lbl9: TLabel;
+    edtDT_LoginAtendente: TEdit;
+    edtDT_ValorTroco: TEdit;
+    lbl10: TLabel;
+    lbl11: TLabel;
+    edtRP_CpfCliente: TEdit;
+    lbl12: TLabel;
+    lbl13: TLabel;
+    edtRP_LoginAtendente: TEdit;
+    edtRP_ValorPagamento: TEdit;
+    lbl14: TLabel;
+    lbl15: TLabel;
+    edtRP_pin: TEdit;
+    lbl16: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+end.

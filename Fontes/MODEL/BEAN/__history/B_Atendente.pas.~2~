@@ -1,0 +1,16 @@
+unit B_Atendente;
+
+interface
+
+type
+  BAtendente = class
+    private
+    public
+      login : string;
+      valorTroco : Currency;
+      valorPagamenteo : Currency;
+  end;
+
+implementation
+
+end.

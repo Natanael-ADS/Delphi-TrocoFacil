@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/11/04 13:25:08.029,=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
+    <Transaction>2020/11/04 13:27:27.740,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\Fontes\U_Principal.dfm=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.dfm</Transaction>
+    <Transaction>2020/11/04 13:27:27.740,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\Fontes\U_Principal.pas=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
+    <Transaction>2020/11/04 13:27:59.589,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacile.dproj=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2020/11/04 13:28:09.280,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacil.dproj=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacile.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

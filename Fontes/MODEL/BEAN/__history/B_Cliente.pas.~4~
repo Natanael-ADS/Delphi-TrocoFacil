@@ -1,0 +1,19 @@
+unit B_Cliente;
+
+interface
+
+type
+  BCliente = class
+    private
+    public
+      property nome :string;
+      property cpf :Integer;
+      property email : string;
+      property telefone : string;
+
+
+  end;
+
+implementation
+
+end.

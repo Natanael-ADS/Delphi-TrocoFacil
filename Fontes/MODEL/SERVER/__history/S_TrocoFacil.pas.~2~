@@ -1,0 +1,15 @@
+unit S_TrocoFacil;
+
+interface
+
+type
+  TSTrocoFacil = class
+    private
+    public
+  end;
+  var
+    STrocoFacil : TSTrocoFacil;
+
+implementation
+
+end.

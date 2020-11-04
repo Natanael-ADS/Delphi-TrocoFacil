@@ -1,0 +1,16 @@
+unit C_CadastrarCliente;
+
+interface
+
+type
+  TCCadastrarCliente = class
+    private
+    public
+      Cadastrar
+  end;
+  var
+    CCadastrarCliente : TCCadastrarCliente;
+
+implementation
+
+end.

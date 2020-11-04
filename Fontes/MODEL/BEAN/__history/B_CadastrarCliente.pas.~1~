@@ -1,0 +1,14 @@
+unit B_Cadastro;
+
+interface
+
+type
+  BCadastro = class
+    private
+    public
+
+  end;
+
+implementation
+
+end.
