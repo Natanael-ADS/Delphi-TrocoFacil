@@ -2,13 +2,14 @@ unit C_Atendente;
 
 interface
 uses
-  B_Cliente,B_Atendente,B_Empresa;
+  B_Cliente,B_Atendente,B_Empresa,S_TrocoFacil;
 type
   TCAtentende = class
     private
         BCliente : TBCliente;
         BEmpresa : TBEmpresa;
         BAtendente: TBAtendente;
+        STrocoFacil : TSTrocoFacil;
     public
       function Autorizacao(cnpj, token:string) : string;
       function DevolverTroco(cpfCliente:Integer; loginAtendente:string; valorTroco:Currency): string;
@@ -25,6 +26,7 @@ function TCAtentende.Autorizacao(cnpj, token: string): string;
 begin
   BEmpresa.cnpf := cnpj;
   BEmpresa.token := token;
+  STrocoFacil := TSTrocoFacil.Create(BEmpresa);
   Result:='AUTORIZADO'
 end;
 
@@ -47,7 +49,8 @@ begin
   BAtendente.cpfCliente := cpfCliente;
   BAtendente.login := loginAtendente;
   BAtendente.valorTroco:= valorTroco;
-  Result  := 'DEVOLVIDO';
+
+  Result  := STrocoFacil.DevolverTroco(BAtendente);
 end;
 
 function TCAtentende.ReceberPagamento(cpfCLiente, pin: Integer;loginAtendente: string; valorPagamento: Currency): string;
@@ -56,7 +59,8 @@ begin
   BAtendente.login := loginAtendente;
   BAtendente.valorPagamenteo := valorPagamento;
   BAtendente.pin  := pin;
-  Result  := 'RECEBIDO';
+
+  Result  := STrocoFacil.ReceberPagamento(BAtendente);
 end;
 
 end.

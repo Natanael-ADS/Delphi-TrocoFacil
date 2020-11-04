@@ -3,13 +3,14 @@ unit C_Cliente;
 interface
 
 uses
-  B_Cliente,B_Empresa;
+  B_Cliente,B_Empresa, S_TrocoFacil;
 
 type
   TCCliente = class
     private
       BCliente : TBCliente;
       BEmpresa : TBEmpresa;
+      STrocoFacil : TSTrocoFacil;
     public
       function Autorizacao(cnpj, token:string) : string;
       function Cadastrar(nome, email,telefone: string; cpf: Integer): string;
@@ -25,6 +26,7 @@ function TCCliente.Autorizacao(cnpj, token: string): string;
 begin
   BEmpresa.cnpf := cnpj;
   BEmpresa.token := token;
+  STrocoFacil := TSTrocoFacil.Create(BEmpresa);
   Result:='AUTORIZADO'
 end;
 
@@ -34,7 +36,7 @@ begin
   BCliente.cpf  := cpf;
   BCLiente.email:= email;
   BCliente.telefone:= telefone;
-  Result:='CADASTRADO'
+  Result:= STrocoFacil.Cadastrar(BCliente);
 end;
 
 constructor TCCliente.Create;

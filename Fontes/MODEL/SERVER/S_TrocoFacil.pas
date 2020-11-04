@@ -2,16 +2,24 @@ unit S_TrocoFacil;
 
 interface
 uses
-  B_Cliente,B_Empresa,B_Atendente;
+  B_Cliente,B_Empresa,B_Atendente,IdHTTP;
 
 type
   TSTrocoFacil = class
     private
+      http1 : TIdHTTP;
+      BEmpresa: TBEmpresa;
+      const BASE_SERVIDOR_HOMOLOGACAO : string = 'https://homologacao.trocofacilbrasil.com.br/';
+      const BASE_SERVIDOR             : string = 'https://api.trocofacilbrasil.com.br/';
+
+      const DEVOLVER_TROCO        : string = 'web/DevolverTroco/index.php?';
+      const CADASTRAR_CONSUMIDOR  : string = 'web/CadastrarCliente/index.php?';
+      const RECEBER_PAGAMENTO     : string = 'web/ReceberPagamento/index.php?';
     public
       function Cadastrar(BCliente: TBCliente): string;
       function DevolverTroco(BAtendente: TBAtendente): string;
       function ReceberPagamento(BAtendente: TBAtendente):string;
-      constructor Create();
+      constructor Create(BEmpresa:TBEmpresa);
       destructor Destroy();
   end;
 
@@ -21,12 +29,12 @@ implementation
 
 function TSTrocoFacil.Cadastrar(BCliente: TBCliente): string;
 begin
-
+   Result := CADASTRAR_CONSUMIDOR + BEmpresa.usarTokenCnpj();
 end;
 
-constructor TSTrocoFacil.Create;
+constructor TSTrocoFacil.Create(BEmpresa:TBEmpresa);
 begin
-
+   Self.BEmpresa := BEmpresa;
 end;
 
 destructor TSTrocoFacil.Destroy;
@@ -36,12 +44,12 @@ end;
 
 function TSTrocoFacil.DevolverTroco(BAtendente: TBAtendente): string;
 begin
-
+  Result := DEVOLVER_TROCO + BEmpresa.usarTokenCnpj();
 end;
 
 function TSTrocoFacil.ReceberPagamento(BAtendente: TBAtendente): string;
 begin
-
+  Result := RECEBER_PAGAMENTO + BEmpresa.usarTokenCnpj();
 end;
 
 end.

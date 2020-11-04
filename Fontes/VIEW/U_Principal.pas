@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,C_CLiente,C_Atendente;
 
 type
   TFrmPrincipal = class(TForm)
@@ -58,9 +58,6 @@ var
   FrmPrincipal: TFrmPrincipal;
 
 implementation
-
-uses
-  C_CLiente,C_Atendente;
 
 {$R *.dfm}
 

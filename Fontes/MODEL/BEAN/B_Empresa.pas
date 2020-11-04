@@ -12,6 +12,7 @@ type
     public
       property cnpf : string read Fcnpf write Setcnpf;
       property token : string read Ftoken write Settoken;
+      function usarTokenCnpj():string;
       Constructor Create();
   end;
 
@@ -32,6 +33,11 @@ end;
 procedure TBEmpresa.Settoken(const Value: string);
 begin
   Ftoken := Value;
+end;
+
+function TBEmpresa.usarTokenCnpj: string;
+begin
+  Result := 'token={'+token+'}&cnpj={'+cnpf+'}';
 end;
 
 end.
