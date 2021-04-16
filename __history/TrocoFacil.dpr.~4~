@@ -1,0 +1,14 @@
+program TrocoFacil;
+
+uses
+  Vcl.Forms,
+  U_Principal in 'Fontes\VIEW\U_Principal.pas' {TFrmPrincipal };
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal , FrmPrincipal );
+  Application.Run;
+end.

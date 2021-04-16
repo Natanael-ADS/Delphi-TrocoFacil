@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2020/11/04 13:25:08.029,=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
-    <Transaction>2020/11/04 13:27:27.740,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\Fontes\U_Principal.dfm=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.dfm</Transaction>
-    <Transaction>2020/11/04 13:27:27.740,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\Fontes\U_Principal.pas=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
-    <Transaction>2020/11/04 13:27:59.589,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacile.dproj=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
-    <Transaction>2020/11/04 13:28:09.280,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacil.dproj=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacile.dproj</Transaction>
+	<Transactions>
+    <Transaction>2020/11/04 13:25:08.000.029,=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
+    <Transaction>2020/11/04 13:27:27.000.740,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\Fontes\U_Principal.dfm=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.dfm</Transaction>
+    <Transaction>2020/11/04 13:27:27.000.740,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\Fontes\U_Principal.pas=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Unit5.pas</Transaction>
+    <Transaction>2020/11/04 13:27:59.000.589,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacile.dproj=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2020/11/04 13:28:09.000.280,C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacil.dproj=C:\Users\DEV - Mobile\Documents\Embarcadero\Studio\Projects\Natanael\TrocoFacil\TrocoFacile.dproj</Transaction>
+    <Transaction>2021/04/16 17:03:54.123,=C:\Users\natan\OneDrive\Área de Trabalho\Delphi-TrocoFacil-main\Delphi-TrocoFacil\Fontes\CONTROLER\C_Atendente.pas</Transaction>
+    <Transaction>2021/04/16 17:03:54.156,=C:\Users\natan\OneDrive\Área de Trabalho\Delphi-TrocoFacil-main\Delphi-TrocoFacil\Fontes\CONTROLER\C_Cliente.pas</Transaction>
+    <Transaction>2021/04/16 17:04:08.796,=C:\Users\natan\OneDrive\Área de Trabalho\Delphi-TrocoFacil-main\Delphi-TrocoFacil\Fontes\MODEL\BEAN\B_Atendente.pas</Transaction>
+    <Transaction>2021/04/16 17:04:08.824,=C:\Users\natan\OneDrive\Área de Trabalho\Delphi-TrocoFacil-main\Delphi-TrocoFacil\Fontes\MODEL\BEAN\B_Cliente.pas</Transaction>
+    <Transaction>2021/04/16 17:04:08.875,=C:\Users\natan\OneDrive\Área de Trabalho\Delphi-TrocoFacil-main\Delphi-TrocoFacil\Fontes\MODEL\BEAN\B_Empresa.pas</Transaction>
+    <Transaction>2021/04/16 17:04:20.674,=C:\Users\natan\OneDrive\Área de Trabalho\Delphi-TrocoFacil-main\Delphi-TrocoFacil\Fontes\MODEL\SERVER\S_TrocoFacil.pas</Transaction>
   </Transactions>
 </BorlandProject>
